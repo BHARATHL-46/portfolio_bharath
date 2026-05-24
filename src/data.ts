@@ -53,7 +53,7 @@ export const bentoCards: BentoCard[] = [
     iconType: "terminal",
     value: "2027",
     title: "Graduation",
-    description: "AI & DS @ BAIT"
+    description: "AI & DS @ BIT"
   }
 ];
 
