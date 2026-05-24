@@ -1,0 +1,6 @@
+{
+  "name": "BHARATH L Portfolio",
+  "description": "Modern, premium, and fully responsive AI Engineering portfolio for BHARATH L, featuring machine learning, computer vision, and RAG systems.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

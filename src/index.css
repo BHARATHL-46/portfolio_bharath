@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-neon-primary: #10b981; /* High voltage energetic emerald green */
+  --color-neon-second: #059669;
+  --color-neon-bright: #39e75f; /* radioactive visual terminal green from screenshot */
+  --color-terminal-green: rgba(16, 185, 129, 0.04);
+  --color-cyber-dark: #050608; /* Deep interstellar black canvas from screenshot */
+  --color-cyber-card: #0b0d13; /* High-tech stealth card pods */
+  --color-cyber-border: rgba(16, 185, 129, 0.12); /* Glowing vector line structures */
+
+  --animate-neon-pulse: neon-pulse 2s infinite alternate;
+  --animate-grid-fade: grid-fade 8s infinite ease-in-out;
+
+  @keyframes neon-pulse {
+    0% {
+      text-shadow: 0 0 6px rgba(57, 231, 95, 0.3), 0 0 15px rgba(57, 231, 95, 0.15);
+      box-shadow: 0 0 4px rgba(57, 231, 95, 0.1);
+    }
+    100% {
+      text-shadow: 0 0 12px rgba(57, 231, 95, 0.6), 0 0 25px rgba(57, 231, 95, 0.3);
+      box-shadow: 0 0 10px rgba(57, 231, 95, 0.25);
+    }
+  }
+
+  @keyframes grid-fade {
+    0%, 100% {
+      opacity: 0.55;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+}
+
+/* Custom base styles updated for peak performance dark display */
+html {
+  scroll-behavior: smooth;
+  background-color: #050608; /* solid deep dark */
+  color: #94a3b8; /* slate-400 high readability body text */
+}
+
+body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar customization adapted for ultimate dark mode */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+  border: 1px solid rgba(57, 231, 95, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #39e75f;
+  box-shadow: 0 0 8px rgba(57, 231, 95, 0.5);
+}
+
+/* Custom terminal and CRT scanline visual utilities */
+.glow-text-green {
+  text-shadow: 0 0 12px rgba(57, 231, 95, 0.45), 0 0 4px rgba(57, 231, 95, 0.2);
+}
+
+.glow-border-green {
+  box-shadow: 0 0 15px rgba(57, 231, 95, 0.08);
+  border-color: rgba(57, 231, 95, 0.35);
+}
+
+.cyber-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(57, 231, 95, 0.022) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(57, 231, 95, 0.022) 1px, transparent 1px);
+}
+
+.cyber-grid-highlight {
+  background-size: 250px 250px;
+  background-image: 
+    linear-gradient(to right, rgba(57, 231, 95, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(57, 231, 95, 0.015) 1px, transparent 1px);
+}
+
+/* Horizontal scan CRT monitors screen limits in screenshot */
+.crt-scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg, 
+    rgba(255, 0, 0, 0.04), 
+    rgba(0, 255, 0, 0.01), 
+    rgba(0, 0, 255, 0.04)
+  );
+  background-size: 100% 4px, 6px 100%;
+}
+
+/* --- GLOBAL CYBER STYLE SHEETS (Premium dark terminal theme) --- */
+
+/* Section structures */
+.cyber-section {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  max-width: 80rem; /* max-w-7xl */
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 1px solid rgba(16, 185, 129, 0.08);
+}
+
+/* Section Typography Headers */
+.cyber-heading-step-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.cyber-heading-step {
+  font-family: var(--font-mono);
+  font-size: 0.85rem; /* text-sm */
+  color: #39e75f; /* vibrant glowing green */
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.cyber-heading-step-line {
+  height: 1px;
+  width: 4rem; /* w-16 */
+  background-color: rgba(57, 231, 95, 0.3);
+}
+
+.cyber-heading-title {
+  font-family: var(--font-mono); /* From screenshot terminal heading style */
+  font-size: 2.75rem; /* text-4xl */
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  text-transform: lowercase;
+}
+
+@media (min-width: 640px) {
+  .cyber-heading-title {
+    font-size: 3.5rem;
+  }
+}
+
+.cyber-heading-desc {
+  font-family: var(--font-mono);
+  font-size: 0.875rem; /* text-sm */
+  color: #94a3b8; /* high-contrast secondary slate silver */
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4rem; /* mb-16 */
+  font-weight: 600;
+}
+
+/* Reusable Cyber Card System optimized for dark terminal specs */
+.cyber-premium-card {
+  padding: 1.75rem;
+  background-color: #0b0d13; /* stealth card pod background */
+  border: 1px solid rgba(16, 185, 129, 0.12); /* neat code borders */
+  border-radius: 0.5rem; /* industrial rounded corners */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition-property: all;
+  transition-duration: 350ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+.cyber-premium-card:hover {
+  border-color: rgba(57, 231, 95, 0.4);
+  box-shadow: 0 10px 35px rgba(57, 231, 95, 0.08), 0 0 15px rgba(57, 231, 95, 0.05);
+  transform: translateY(-4px);
+}
+
+.cyber-hover-glow-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #39e75f; /* bright green top boundary */
+  transform: scaleX(0);
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: left;
+}
+
+.cyber-premium-card:hover .cyber-hover-glow-accent {
+  transform: scaleX(1);
+}
+
+/* Badge indicators */
+.cyber-badge-tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0.125rem 0.625rem;
+  border-radius: 0.125rem;
+  border-width: 1px;
+}
+
+.cyber-badge-completed {
+  background-color: rgba(148, 163, 184, 0.05);
+  color: #94a3b8;
+  border-color: rgba(148, 163, 184, 0.2);
+}
+
+.cyber-badge-ongoing {
+  background-color: rgba(57, 231, 95, 0.05);
+  color: #39e75f;
+  border-color: rgba(57, 231, 95, 0.25);
+}
+
+/* Tag capsules (e.g., skill pills) */
+.cyber-pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 0.25rem 0.625rem;
+  background-color: rgba(16, 185, 129, 0.03);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  color: #cbd5e1;
+  border-radius: 0.25rem;
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.cyber-pill:hover {
+  background-color: rgba(57, 231, 95, 0.1);
+  border-color: #39e75f;
+  color: #39e75f;
+  text-shadow: 0 0 4px rgba(57, 231, 95, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Core Buttons in Dark Theme from Screenshot */
+.cyber-btn-primary {
+  font-family: var(--font-mono);
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  background-color: #39e75f; /* Solid radioactive green from screenshot */
+  color: #000000; /* Solid ink black text from screenshot */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition-property: all;
+  transition-duration: 250ms;
+  box-shadow: 0 0 15px rgba(57, 231, 95, 0.35);
+  cursor: pointer;
+}
+
+.cyber-btn-primary:hover {
+  background-color: #ffffff; /* pure contrasting white */
+  color: #000000;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.cyber-btn-secondary {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(57, 231, 95, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #39e75f;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition-property: all;
+  transition-duration: 250ms;
+  cursor: pointer;
+}
+
+.cyber-btn-secondary:hover {
+  background-color: rgba(57, 231, 95, 0.08);
+  border-color: #39e75f;
+  text-shadow: 0 0 8px rgba(57, 231, 95, 0.4);
+  box-shadow: 0 0 12px rgba(57, 231, 95, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Beautiful custom cyber syntax colors for developer console widgets */
+.code-keyword {
+  color: #f43f5e; /* Vibrant cyberpunk ruby red */
+  font-weight: 700;
+}
+
+.code-variable {
+  color: #38bdf8; /* Energetic cyber sky blue */
+}
+
+.code-def {
+  color: #fb923c; /* Hyperdrive orange */
+}
+
+.code-string {
+  color: #39e75f; /* Terminal green string output */
+  text-shadow: 0 0 4px rgba(57, 231, 95, 0.2);
+}
+
+.code-property {
+  color: #a78bfa; /* Future violet */
+}
+
+.code-comment {
+  color: #4b5563; /* Low impedance grey noise */
+  font-style: italic;
+}
